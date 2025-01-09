@@ -31,7 +31,7 @@ class AboutPage extends StatelessWidget {
                   fontSize: 16,
                   color: kMikadoYellow,
                 ),
-                textAlign: TextAlign.justify,
+                textAlign: TextAlign.left,
               ),
             ),
           ),
