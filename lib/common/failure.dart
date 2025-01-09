@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 abstract class Failure extends Equatable {
   final String message;
 
+  // ignore: prefer_const_constructors_in_immutables
   Failure(this.message);
 
   @override
@@ -10,13 +11,13 @@ abstract class Failure extends Equatable {
 }
 
 class ServerFailure extends Failure {
-  ServerFailure(String message) : super(message);
+  ServerFailure(super.message);
 }
 
 class ConnectionFailure extends Failure {
-  ConnectionFailure(String message) : super(message);
+  ConnectionFailure(super.message);
 }
 
 class DatabaseFailure extends Failure {
-  DatabaseFailure(String message) : super(message);
+  DatabaseFailure(super.message);
 }
