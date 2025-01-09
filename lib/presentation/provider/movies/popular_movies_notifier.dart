@@ -1,14 +1,14 @@
 import 'package:ditonton/common/state_enum.dart';
 import 'package:ditonton/domain/entities/movie.dart';
-import 'package:ditonton/domain/usecases/get_top_rated_movies.dart';
+import 'package:ditonton/domain/usecases/movies/get_popular_movies.dart';
 import 'package:flutter/foundation.dart';
 
-class TopRatedMoviesNotifier extends ChangeNotifier {
-  final GetTopRatedMovies getTopRatedMovies;
+class PopularMoviesNotifier extends ChangeNotifier {
+  final GetPopularMovies getPopularMovies;
 
-  TopRatedMoviesNotifier({required this.getTopRatedMovies});
+  PopularMoviesNotifier(this.getPopularMovies);
 
-  RequestState _state = RequestState.Empty;
+  RequestState _state = RequestState.empty;
   RequestState get state => _state;
 
   List<Movie> _movies = [];
@@ -17,21 +17,21 @@ class TopRatedMoviesNotifier extends ChangeNotifier {
   String _message = '';
   String get message => _message;
 
-  Future<void> fetchTopRatedMovies() async {
-    _state = RequestState.Loading;
+  Future<void> fetchPopularMovies() async {
+    _state = RequestState.loading;
     notifyListeners();
 
-    final result = await getTopRatedMovies.execute();
+    final result = await getPopularMovies.execute();
 
     result.fold(
       (failure) {
         _message = failure.message;
-        _state = RequestState.Error;
+        _state = RequestState.error;
         notifyListeners();
       },
       (moviesData) {
         _movies = moviesData;
-        _state = RequestState.Loaded;
+        _state = RequestState.loaded;
         notifyListeners();
       },
     );

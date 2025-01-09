@@ -2,45 +2,39 @@ import 'package:ditonton/common/constants.dart';
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
-  static const ROUTE_NAME = '/about';
+  static const routeName = '/about';
+
+  const AboutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+      appBar: AppBar(
+        title: const Text("About"),
+      ),
+      body: Column(
         children: [
-          Column(
-            children: [
-              Expanded(
-                child: Container(
-                  color: kPrussianBlue,
-                  child: Center(
-                    child: Image.asset(
-                      'assets/circle-g.png',
-                      width: 128,
-                    ),
-                  ),
-                ),
+          Expanded(
+            child: Center(
+              child: Image.asset(
+                'assets/circle-g.png',
+                width: 128,
               ),
-              Expanded(
-                child: Container(
-                  padding: const EdgeInsets.all(32.0),
-                  color: kMikadoYellow,
-                  child: Text(
-                    'Ditonton merupakan sebuah aplikasi katalog film yang dikembangkan oleh Dicoding Indonesia sebagai contoh proyek aplikasi untuk kelas Menjadi Flutter Developer Expert.',
-                    style: TextStyle(color: Colors.black87, fontSize: 16),
-                    textAlign: TextAlign.justify,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SafeArea(
-            child: IconButton(
-              onPressed: () => Navigator.pop(context),
-              icon: Icon(Icons.arrow_back),
             ),
-          )
+          ),
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.all(32.0),
+              child: const Text(
+                'Ditonton merupakan sebuah aplikasi katalog film yang dikembangkan oleh Dicoding Indonesia sebagai contoh proyek aplikasi untuk kelas Menjadi Flutter Developer Expert.',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: kMikadoYellow,
+                ),
+                textAlign: TextAlign.justify,
+              ),
+            ),
+          ),
         ],
       ),
     );
