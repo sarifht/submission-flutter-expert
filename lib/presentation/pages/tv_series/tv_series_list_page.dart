@@ -1,4 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/common/state_enum.dart';
 import 'package:ditonton/domain/entities/tv_series.dart';
@@ -6,15 +7,10 @@ import 'package:ditonton/presentation/pages/tv_series/now_playing_tv_series_page
 import 'package:ditonton/presentation/pages/tv_series/popular_tv_series_page.dart';
 import 'package:ditonton/presentation/pages/tv_series/search_tv_series_page.dart';
 import 'package:ditonton/presentation/pages/tv_series/top_rated_tv_series_page.dart';
-import 'package:ditonton/presentation/pages/tv_series/tv_series_detail_page.dart';
 import 'package:ditonton/presentation/provider/tv_series/tv_series_list_notifier.dart';
 import 'package:ditonton/presentation/widgets/shimmer_carousel.dart';
 import 'package:ditonton/presentation/widgets/shimmer_home.dart';
 import 'package:ditonton/presentation/widgets/tv_series_carousel.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:provider/provider.dart';
-import 'package:shimmer/shimmer.dart';
 
 class TvSeriesListPage extends StatefulWidget {
   const TvSeriesListPage({super.key});
@@ -72,10 +68,12 @@ class _TvSeriesListPageState extends State<TvSeriesListPage> {
                   }
                 },
               ),
-              _buildSubHeading(
+              SubHeadingWidget(
                 title: 'Now Playing',
                 onTap: () => Navigator.pushNamed(
-                    context, NowPlayingTvSeriesPage.routeName),
+                  context,
+                  NowPlayingTvSeriesPage.routeName,
+                ),
               ),
               Consumer<TvSeriesListNotifier>(
                 builder: (context, data, child) {
@@ -89,10 +87,12 @@ class _TvSeriesListPageState extends State<TvSeriesListPage> {
                   }
                 },
               ),
-              _buildSubHeading(
+              SubHeadingWidget(
                 title: 'Popular',
-                onTap: () =>
-                    Navigator.pushNamed(context, PopularTvSeriesPage.routeName),
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  PopularTvSeriesPage.routeName,
+                ),
               ),
               Consumer<TvSeriesListNotifier>(
                 builder: (context, data, child) {
@@ -106,10 +106,12 @@ class _TvSeriesListPageState extends State<TvSeriesListPage> {
                   }
                 },
               ),
-              _buildSubHeading(
+              SubHeadingWidget(
                 title: 'Top Rated',
                 onTap: () => Navigator.pushNamed(
-                    context, TopRatedTvSeriesPage.routeName),
+                  context,
+                  TopRatedTvSeriesPage.routeName,
+                ),
               ),
               Consumer<TvSeriesListNotifier>(
                 builder: (context, data, child) {
@@ -129,8 +131,20 @@ class _TvSeriesListPageState extends State<TvSeriesListPage> {
       ),
     );
   }
+}
 
-  Row _buildSubHeading({required String title, required Function() onTap}) {
+class SubHeadingWidget extends StatelessWidget {
+  final String title;
+  final Function() onTap;
+
+  const SubHeadingWidget({
+    required this.title,
+    required this.onTap,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -143,7 +157,10 @@ class _TvSeriesListPageState extends State<TvSeriesListPage> {
           child: const Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
-              children: [Text('See More'), Icon(Icons.arrow_forward_ios)],
+              children: [
+                Text('See More'),
+                Icon(Icons.arrow_forward_ios),
+              ],
             ),
           ),
         ),
@@ -167,66 +184,11 @@ class TvSeriesList extends StatelessWidget {
           final data = tvSeries[index];
           return Container(
             width: 150,
-            padding: const EdgeInsets.all(8),
-            child: InkWell(
-              onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  TvSeriesDetailPage.routeName,
-                  arguments: data.id,
-                );
-              },
+            child: Card(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ClipRRect(
-                    borderRadius: const BorderRadius.all(Radius.circular(16)),
-                    child: CachedNetworkImage(
-                      imageUrl: '$baseImageUrl${data.posterPath}',
-                      errorWidget: (context, url, error) => const SizedBox(
-                        width: 150,
-                        height: 270,
-                        child: Icon(Icons.error),
-                      ),
-                      placeholder: (context, url) {
-                        return SizedBox(
-                          width: 270,
-                          height: 150,
-                          child: Shimmer.fromColors(
-                            baseColor: Colors.grey.withOpacity(0.3),
-                            highlightColor: Colors.grey.withOpacity(0.1),
-                            child: Container(
-                              color: Colors.white,
-                            ),
-                          ),
-                        );
-                      },
-                      height: 200,
-                      width: 150,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    data.name!,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      RatingBarIndicator(
-                        rating: data.voteAverage! / 2,
-                        itemCount: 5,
-                        itemBuilder: (context, index) => const Icon(
-                          Icons.star,
-                          color: kMikadoYellow,
-                        ),
-                        itemSize: 10,
-                      ),
-                      Text('${data.voteAverage}')
-                    ],
-                  ),
+                  // Your card content here
                 ],
               ),
             ),

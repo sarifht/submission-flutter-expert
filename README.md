@@ -5,7 +5,7 @@ https://github.com/sarifht/submission-flutter-expert.git
 
 ## Petunjuk Branch
 
-Pada branch main, itu adalah kode yang terakhir diperbaharui. Jika kamu ingin melihat kode submission_1 dan submission_2 silahkan berganti branch.
+Pada branch main, itu adalah kode yang terakhir diperbaharui. Jika kamu ingin melihat kode submission-1 dan submission-2 silahkan berganti branch.
 
 ...
 
