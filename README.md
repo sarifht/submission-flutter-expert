@@ -3,9 +3,23 @@
 Bisa kamu cek disini untuk repository Githubnya:
 https://github.com/sarifht/submission-flutter-expert.git
 
+## Petunjuk Branch
+
+Pada branch main, itu adalah kode yang terakhir diperbaharui. Jika kamu ingin melihat kode submission_1 dan submission_2 silahkan berganti branch.
+
+...
+
+## Peringatan
+
+Usahakan tidak mengirim keseluruhan kode dalam repo ini sebagai submission pribadi atau meng-copy keseluruhan kode, karena khawatir submissionmu akan ditolak atau terkena suspend akun dari pihak Dicoding.
+
 ...
 
 Ditulis oleh: Sarif Hidayatullah
+
+---
+
+Tulisan dibawah ini, bawaan dari Readme Dicoding
 
 # a199-flutter-expert-project
 
