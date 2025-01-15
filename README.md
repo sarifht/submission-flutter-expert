@@ -5,9 +5,27 @@ https://github.com/sarifht/submission-flutter-expert.git
 
 ## Petunjuk Branch
 
-Pada branch main, itu adalah kode yang terakhir diperbaharui. Jika kamu ingin melihat kode submission-1 dan submission-2 silahkan berganti branch.
+Pada branch main, itu adalah kode yang terakhir diperbaharui. Jika kamu ingin melihat kode submission-1 dan submission-2 silahkan berganti branch. Cara pindah branch:
 
-...
+```bash
+git checkout submission-1
+```
+
+## Cara Running Project
+
+Silahkan periksa versi Flutter punyamu terlebih dahulu, biar lebih aman silahkan jalankan perintah berikut:
+
+```bash
+flutter upgrade
+```
+
+Lalu install dependensi, bisa pake "flutter pub get" tapi saya lebih menyarakan perintah berikut:
+
+```bash
+flutter pub upgrade
+```
+
+Silahkan jalankan device android emulator-nya dan pergi ke file main.dart, lalu klik run.
 
 ## Peringatan
 
