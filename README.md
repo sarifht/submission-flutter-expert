@@ -1,4 +1,4 @@
-# Submission Pertama untuk Kelas Flutter Expert
+# Submission untuk Kelas Flutter Expert
 
 Bisa kamu cek disini untuk repository Githubnya:
 https://github.com/sarifht/submission-flutter-expert.git
