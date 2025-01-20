@@ -1,3 +1,5 @@
+[![Codemagic build status](https://api.codemagic.io/apps/<app-id>/<workflow-id>/status_badge.svg)](https://codemagic.io/app/<app-id>/<workflow-id>/latest_build)
+
 # Submission untuk Kelas Flutter Expert
 
 Bisa kamu cek disini untuk repository Githubnya:
