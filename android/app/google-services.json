@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "744400014829",
+    "project_id": "ditonton-sarifht",
+    "storage_bucket": "ditonton-sarifht.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744400014829:android:f6e0443278fa281680abe4",
+        "android_client_info": {
+          "package_name": "com.example.ditonton"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfDngypIawehB7Qt-B0yP-uBWl4hDe01U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
