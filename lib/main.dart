@@ -22,7 +22,7 @@ import 'package:movies/presentation/pages/search_movies_page.dart';
 import 'package:movies/presentation/pages/top_rated_movies_page.dart';
 import 'package:movies/presentation/pages/watchlist_movies_page.dart';
 import 'package:provider/provider.dart';
-import 'package:ditonton/injection.dart';
+import 'package:ditonton/injection.dart' as di;
 import 'package:tv_series/presentation/bloc/airing_today/airing_today_tv_series_bloc.dart';
 import 'package:tv_series/presentation/bloc/detail/detail_tv_series_bloc.dart';
 import 'package:tv_series/presentation/bloc/now_playing/now_playing_tv_series_bloc.dart';
