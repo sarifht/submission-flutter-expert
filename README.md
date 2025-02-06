@@ -1,4 +1,4 @@
-[![Codemagic build status](https://api.codemagic.io/apps/<app-id>/<workflow-id>/status_badge.svg)](https://codemagic.io/app/<app-id>/<workflow-id>/latest_build)
+[![Codemagic build status](https://api.codemagic.io/apps/6787d79831fd783e01cfe633/6787d79831fd783e01cfe632/status_badge.svg)](https://codemagic.io/app/6787d79831fd783e01cfe633/6787d79831fd783e01cfe632/latest_build)
 
 # Submission untuk Kelas Flutter Expert
 
