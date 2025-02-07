@@ -30,7 +30,7 @@ void main() {
   );
 
   const tEpisodeJson = {
-    'air_date': '2020-11-10',
+    'air_date': '2025-01-10',
     'episode_number': 1,
     'id': 1,
     'name': 'name',
